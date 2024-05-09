@@ -1,0 +1,41 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1714561442114,
+      "tag": "0000_oval_thunderbird",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1715121309266,
+      "tag": "0001_blue_ken_ellis",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1715188444212,
+      "tag": "0002_careful_loa",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1715248754659,
+      "tag": "0003_light_rockslide",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1715249205997,
+      "tag": "0004_confused_human_robot",
+      "breakpoints": true
+    }
+  ]
+}

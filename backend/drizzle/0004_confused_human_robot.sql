@@ -1,0 +1,1 @@
+ALTER TABLE `images` MODIFY COLUMN `breeds` text;

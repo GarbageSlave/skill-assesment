@@ -1,0 +1,43 @@
+services:
+  webapp:
+    restart: unless-stopped
+    build: ./webapp
+    volumes:
+      - ./webapp:/usr/src/app
+      - /usr/src/app/node_modules
+
+  backend:
+    restart: unless-stopped
+    build: ./backend
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - mysql
+
+  nginx:
+    restart: unless-stopped
+    image: nginx:alpine
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - webapp
+      - backend
+
+  mysql:
+    image: "mysql:8.0"
+    restart: unless-stopped
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
